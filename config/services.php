@@ -30,5 +30,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'vtiger' => [
+        'url' => env('VTIGER_URL'),
+        'username' => env('VTIGER_USERNAME'),
+        'accessKey' => env('VTIGER_ACCESS_KEY'),
+    ],
 ];
