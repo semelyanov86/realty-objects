@@ -5,26 +5,18 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Data\ManagerData;
-use Salaros\Vtiger\VTWSCLib\WSClient;
+use App\Lib\VtigerInterface;
 
 final class VtigerConnector
 {
-    protected WSClient $client;
-
-    public function __construct()
-    {
-        /** @var string $url */
-        $url = config('services.vtiger.url');
-        /** @var string $login */
-        $login = config('services.vtiger.username');
-        /** @var string $key */
-        $key = config('services.vtiger.accessKey');
-        $this->client = new WSClient($url, $login, $key);
+    public function __construct(
+        protected VtigerInterface $client,
+    ) {
     }
 
     public function getAssignedUserModel(string $id): ?ManagerData
     {
-        $result = $this->client->entities->findOneByID('Users', '5');
+        $result = $this->client->findOneByID('Users', '5');
 
         return ManagerData::from([
             'first_name' => $result['first_name'],

@@ -8,28 +8,28 @@
             <div class="app-header-image">
                 <img
                     src="/images/ff4233ad-46e9-42f9-a51c-c04d9bcd95a5.jpeg"
-                    alt="{{manager.id}}"
+                    alt="{{manager?.id}}"
                 />
             </div>
             <div class="app-header-info">
                 <div class="app-header-manager">
                     <div class="app-header-manager-name">
-                        {{ manager.first_name }} {{ manager.last_name }}
+                        {{ manager?.first_name }} {{ manager?.last_name }}
                     </div>
                     <div class="app-header-manager-title">
-                        {{ manager.title }}
+                        {{ manager?.title }}
                     </div>
                 </div>
                 <div class="app-header-contacts">
                     <a
-                        href="tel:{{manager.phone}}"
+                        href="tel:{{manager?.phone}}"
                         class="app-header-contacts-phone"
-                        >{{ manager.phone }}</a
+                        >{{ manager?.phone }}</a
                     >
                     <a
-                        href="mailto:{{ manager.email }}"
+                        href="mailto:{{ manager?.email }}"
                         class="app-header-contacts-email"
-                        >{{ manager.email }}</a
+                        >{{ manager?.email }}</a
                     >
                 </div>
             </div>
