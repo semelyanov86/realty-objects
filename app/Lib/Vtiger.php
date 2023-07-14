@@ -28,4 +28,13 @@ final class Vtiger implements VtigerInterface
     {
         return $this->client->entities->findOneByID($module, $id);
     }
+
+    public function retrieveRelated(string $parentId, string $type, string $label): array
+    {
+        return $this->client->invokeOperation('retrieve_related', [
+            'id' => $parentId,
+            'relatedType' => $type,
+            'relatedLabel' => $label,
+        ], 'GET');
+    }
 }

@@ -20,4 +20,15 @@ class PotentialReceiverTest extends \Tests\TestCase
             )
         );
     }
+
+    public function testReceivingPotentialModelFromVtiger(): void
+    {
+        $this->withoutExceptionHandling();
+        $this->app->bind(VtigerInterface::class, MockVtiger::class);
+        $this->get('/165')->assertInertia(
+            fn (Assert $page) => $page->component('Realty')->has('potential',
+                fn (Assert $page) => $page->where('potentialname', 'Super new propertied')->where('description', 'Some interesting description')->etc()
+            )
+        );
+    }
 }
