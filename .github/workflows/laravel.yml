@@ -38,15 +38,6 @@ jobs:
       - name: Composer Validate
         run: composer validate --no-check-all --strict
 
-      - name: Run PHPUnit Tests
-        run: ./vendor/bin/phpunit --colors=always
-
-      - name: Lint PHP Code
-        run: ./vendor/bin/pint --test
-
-      - name: PHPStan
-        run: ./vendor/bin/phpstan analyse
-
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -57,6 +48,15 @@ jobs:
 
       - name: Build Vue.js
         run: npm run build
+
+      - name: Run PHPUnit Tests
+        run: ./vendor/bin/phpunit --colors=always
+
+      - name: Lint PHP Code
+        run: ./vendor/bin/pint --test
+
+      - name: PHPStan
+        run: ./vendor/bin/phpstan analyse
 
   deploy:
     needs: [build]
