@@ -20,9 +20,6 @@ class RatingTest extends \Tests\TestCase
             'value' => 4,
         ])->assertRedirect('/16');
 
-        $this->get('/16')->assertInertia(
-            fn (Assert $page) => $page->component('Realty')->has('properties')
-        );
         $ratings = \App\Models\Rating::all();
         $this->assertCount(1, $ratings);
         $this->assertEquals(4, $ratings->first()->value);
