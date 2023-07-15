@@ -28,6 +28,52 @@ final class MockVtiger implements VtigerInterface
         'description' => 'Some interesting description',
     ];
 
+    const MOCK_PROPERTY = [
+        'id' => '32x454',
+        'externalid' => '123456',
+        'property_type' => 'Apartment',
+        'project' => '',
+        'property_category' => 'Residential',
+        'project_pres' => 'some presentation about appartment',
+        'arcitectural_style' => 'Modern',
+        'residence_status' => 'New',
+        'complex_description' => 'Some description about complex',
+        'property_description_ext' => 'Some description about appartment complex',
+        'property_rights' => 'Property Rights',
+        'security' => 'Security',
+        'price_original' => '1000000',
+        'price' => 234132,
+        'currency_id' => '2',
+        'storeys_no' => '5',
+        'year_builded' => '2019',
+        'country' => 'Russia',
+        'city' => 'Moscow',
+        'address' => 'Some address',
+    ];
+
+    public const MOCKED_DOCUMENT = [
+        'id' => '1x5',
+        'notes_title' => 'Some title',
+        'filename' => 'some_file.pdf',
+        'filetype' => 'application/pdf',
+        'filesize' => '123456',
+        'filelocationtype' => 'I',
+        'filestatus' => 'on',
+        'filedownloadcount' => '0',
+        'fileversion' => '1',
+        'createdtime' => '2020-01-01 00:00:00',
+        'modifiedtime' => '2020-01-01 00:00:00',
+        'notecontent' => 'Some content',
+        'assigned_user_id' => '1x5',
+        'folderid' => '1x5',
+        'note_no' => '1',
+        'modifiedby' => '1x5',
+        'source' => 'CRM',
+        'starred' => '0',
+        'tags' => '',
+        'imageattachmentids' => '4x234',
+    ];
+
     /**
      * {@inheritDoc}
      */
@@ -46,7 +92,11 @@ final class MockVtiger implements VtigerInterface
 
     public function retrieveRelated(string $parentId, string $type, string $label): array
     {
-        return [];
+        if ($label == 'Documents') {
+            return [self::MOCKED_DOCUMENT];
+        }
+
+        return [self::MOCK_PROPERTY];
     }
 
     public function fileRetrieve(string $attachmentId): string

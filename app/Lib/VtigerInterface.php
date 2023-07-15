@@ -12,7 +12,7 @@ interface VtigerInterface
     public function findOneById(string $module, string $id): ?array;
 
     /**
-     * @return array<array<string, string>>
+     * @return array<array<string, float|string>>
      */
     public function retrieveRelated(string $parentId, string $type, string $label): array;
 

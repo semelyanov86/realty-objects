@@ -31,4 +31,15 @@ class PotentialReceiverTest extends \Tests\TestCase
             )
         );
     }
+
+    public function testReceivingPropertiesFromVtiger(): void
+    {
+        $this->withoutExceptionHandling();
+        $this->app->bind(VtigerInterface::class, MockVtiger::class);
+        $this->get('/165')->assertInertia(
+            fn (Assert $page) => $page->component('Realty')->has('properties',
+                fn (Assert $page) => $page->where('0.property_description_ext', 'Some description about appartment complex')->where('0.price', 234132)->where('0.project_pres', 'some presentation about appartment')->where('0.documents.0.file_content', 'SOME_CONTENT_BASE64')->etc()
+            )
+        );
+    }
 }
