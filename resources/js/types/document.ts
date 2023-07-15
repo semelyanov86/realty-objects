@@ -1,0 +1,23 @@
+export type DocumentData = {
+    notes_title: string;
+    createdtime: string;
+    modifiedtime: string;
+    filename: string;
+    assigned_user_id: string;
+    notecontent: string;
+    filetype: string;
+    filesize: string;
+    filelocationtype: string;
+    fileversion: string;
+    filestatus: string;
+    filedownloadcount: string;
+    folderid: string;
+    note_no: string;
+    modifiedby: string;
+    source: string;
+    starred: string;
+    tags: string;
+    id: string;
+    imageattachmentids: string;
+    file_content: string | null;
+};

@@ -22,6 +22,12 @@ jobs:
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
+      - name: Setup Laravel
+        run: |
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan key:generate
+
       - name: Composer Lint
         run: ./vendor/bin/phplint --no-cache
 

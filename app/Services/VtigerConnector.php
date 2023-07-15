@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Data\DocumentData;
 use App\Data\ManagerData;
 use App\Data\PotentialData;
 use App\Data\PropertyData;
@@ -65,7 +66,7 @@ final class VtigerConnector
 
         $properties = [];
         foreach ($originalProperties as $originalProperty) {
-            $properties[] = PropertyData::from([
+            $property = PropertyData::from([
                 'id' => $originalProperty['id'],
                 'externalid' => $originalProperty['externalid'],
                 'property_type' => $originalProperty['property_type'],
@@ -79,7 +80,7 @@ final class VtigerConnector
                 'property_rights' => $originalProperty['property_rights'],
                 'security' => $originalProperty['security'],
                 'price_original' => $originalProperty['price_original'],
-                'price' => $originalProperty['price'],
+                'price' => (float) $originalProperty['price'],
                 'currency_id' => $originalProperty['currency_id'],
                 'storeys_no' => $originalProperty['storeys_no'],
                 'year_builded' => $originalProperty['year_builded'],
@@ -87,8 +88,26 @@ final class VtigerConnector
                 'city' => $originalProperty['city'],
                 'address' => $originalProperty['address'],
             ]);
+            $property->documents = $this->getPropertyDocuments($property->id);
+            $properties[] = $property;
         }
 
         return $properties;
+    }
+
+    /**
+     * @return DocumentData[]
+     */
+    public function getPropertyDocuments(string $propertyId): array
+    {
+        $originalDocuments = $this->client->retrieveRelated($propertyId, 'Documents', 'Documents');
+        $documents = [];
+        foreach ($originalDocuments as $originalDocument) {
+            $document = DocumentData::from($originalDocument);
+            $document->file_content = $this->client->fileRetrieve($document->imageattachmentids);
+            $documents[] = $document;
+        }
+
+        return $documents;
     }
 }

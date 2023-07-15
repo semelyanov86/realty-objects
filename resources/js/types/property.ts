@@ -1,3 +1,5 @@
+import { DocumentData } from "@/types/document";
+
 export interface Property {
     id: string;
     externalid: string;
@@ -8,7 +10,7 @@ export interface Property {
     architectural_style: string;
     residence_status: string;
     complex_description: string;
-    property_description_text: string;
+    property_description_ext: string;
     property_rights: string;
     security: string;
     price_original: string;
@@ -19,4 +21,5 @@ export interface Property {
     country: string;
     city: string;
     address: string;
+    documents: DocumentData[];
 }

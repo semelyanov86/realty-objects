@@ -15,4 +15,6 @@ interface VtigerInterface
      * @return array<array<string, string>>
      */
     public function retrieveRelated(string $parentId, string $type, string $label): array;
+
+    public function fileRetrieve(string $attachmentId): string;
 }

@@ -48,4 +48,9 @@ final class MockVtiger implements VtigerInterface
     {
         return [];
     }
+
+    public function fileRetrieve(string $attachmentId): string
+    {
+        return 'SOME_CONTENT_BASE64';
+    }
 }

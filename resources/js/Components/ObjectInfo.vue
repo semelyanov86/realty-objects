@@ -8,195 +8,16 @@
             </div>
             <div class="app-object-header-price">{{ object.price }} $</div>
         </div>
-        <div class="app-object-gallery" style="width: 698px; height: 400px">
-            <div
-                class="app-object-gallery-slides"
-                style="
-                    width: 5584px;
-                    height: 400px;
-                    transform: translate(0px, 0px);
-                    transition: none 0s ease 0s;
-                "
-            >
-                <div
-                    class="app-object-gallery-slides-one"
-                    style="
-                        width: 698px;
-                        min-width: 698px;
-                        max-width: 698px;
-                        height: 400px;
-                    "
-                >
-                    <img
-                        src="/images/30675573-48bf-4c2f-b104-ab673542c36e.jpeg"
-                        alt=""
-                        draggable="false"
-                        style="max-width: 704.98px; max-height: 480px"
-                    />
-                </div>
-                <div
-                    class="app-object-gallery-slides-one"
-                    style="
-                        width: 698px;
-                        min-width: 698px;
-                        max-width: 698px;
-                        height: 400px;
-                    "
-                >
-                    <img
-                        src="/images/06f800f4-866b-4b22-8641-4db4fa4fe6de.jpeg"
-                        alt=""
-                        draggable="false"
-                        style="max-width: 704.98px; max-height: 480px"
-                    />
-                </div>
-                <div
-                    class="app-object-gallery-slides-one"
-                    style="
-                        width: 698px;
-                        min-width: 698px;
-                        max-width: 698px;
-                        height: 400px;
-                    "
-                >
-                    <img
-                        src="/images/a61caee2-3b57-4b37-9daa-9ae09abe6a0d.jpeg"
-                        alt=""
-                        draggable="false"
-                        style="max-width: 704.98px; max-height: 480px"
-                    />
-                </div>
-                <div
-                    class="app-object-gallery-slides-one"
-                    style="
-                        width: 698px;
-                        min-width: 698px;
-                        max-width: 698px;
-                        height: 400px;
-                    "
-                >
-                    <img
-                        src="/images/37a8a1c0-1ce9-4366-816b-ebc9269c0cbb.jpeg"
-                        alt=""
-                        draggable="false"
-                        style="max-width: 704.98px; max-height: 480px"
-                    />
-                </div>
-                <div
-                    class="app-object-gallery-slides-one"
-                    style="
-                        width: 698px;
-                        min-width: 698px;
-                        max-width: 698px;
-                        height: 400px;
-                    "
-                >
-                    <img
-                        src="/images/527c3c24-9132-48e0-8863-f125e5f7f3fc.jpeg"
-                        alt=""
-                        draggable="false"
-                        style="max-width: 704.98px; max-height: 480px"
-                    />
-                </div>
-                <div
-                    class="app-object-gallery-slides-one"
-                    style="
-                        width: 698px;
-                        min-width: 698px;
-                        max-width: 698px;
-                        height: 400px;
-                    "
-                >
-                    <img
-                        src="/images/df1eb10f-4484-4a3a-9a35-46e84afaa985.jpeg"
-                        alt=""
-                        draggable="false"
-                        style="max-width: 704.98px; max-height: 480px"
-                    />
-                </div>
-                <div
-                    class="app-object-gallery-slides-one"
-                    style="
-                        width: 698px;
-                        min-width: 698px;
-                        max-width: 698px;
-                        height: 400px;
-                    "
-                >
-                    <img
-                        src="/images/f619e312-e235-473b-a440-37b00afaa9c4.jpeg"
-                        alt=""
-                        draggable="false"
-                        style="max-width: 704.98px; max-height: 480px"
-                    />
-                </div>
-                <div
-                    class="app-object-gallery-slides-one"
-                    style="
-                        width: 698px;
-                        min-width: 698px;
-                        max-width: 698px;
-                        height: 400px;
-                    "
-                >
-                    <img
-                        src="/images/eb52a1a8-7860-437f-a555-a865a1dcc592.jpeg"
-                        alt=""
-                        draggable="false"
-                        style="max-width: 704.98px; max-height: 480px"
-                    />
-                </div>
-            </div>
-            <div class="app-object-gallery-count">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="icon_camera"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path
-                        d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"
-                    ></path>
-                    <circle cx="12" cy="13" r="3"></circle>
-                </svg>
-                <span>1 / 8</span>
-            </div>
-            <div class="app-object-gallery-arrow __left">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="icon_shevron_left"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <polyline points="15 6 9 12 15 18"></polyline>
-                </svg>
-            </div>
-            <div class="app-object-gallery-arrow __right">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="icon_shevron_right"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <polyline points="9 6 15 12 9 18"></polyline>
-                </svg>
-            </div>
-        </div>
+        <carousel :items-to-show="1">
+            <slide v-for="document in object.documents" :key="document.id">
+                <img :src="getImgSrc(document)" :alt="document.notes_title" />
+            </slide>
+
+            <template #addons>
+                <navigation />
+                <pagination />
+            </template>
+        </carousel>
         <div class="app-object-info">
             <div class="app-object-info-mark">
                 <p>Rate this object:</p>
@@ -316,12 +137,7 @@
         </div>
         <div class="app-object-detail">
             <p>
-                Дом располагается в Лос-Анджелесе, Вудленд-Хиллз. Здесь
-                находится много популярных достопримечательностей (например,
-                парк Уорнер Сентер). Дом включает в себя развитую инфраструктуру
-                - центральное отопление, два парковочных места, собственную
-                прачечную. Кроме того, планировка дома предусматривает две
-                полноценных ванных комнаты и одну совмещенную.&nbsp;
+                {{ object.property_description_ext }}
             </p>
         </div>
     </div>
@@ -330,6 +146,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Property } from "../types/property";
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import { DocumentData } from "@/types/document";
 
 export default defineComponent({
     name: "ObjectInfo",
@@ -339,8 +158,19 @@ export default defineComponent({
             required: true,
         },
     },
+    components: {
+        Carousel,
+        Slide,
+        Pagination,
+        Navigation,
+    },
     setup(props) {
+        function getImgSrc(document: DocumentData) {
+            return `data:${document.filetype};base64, ${document.file_content}`;
+        }
+
         return {
+            getImgSrc: getImgSrc,
             object: props.object,
         };
     },

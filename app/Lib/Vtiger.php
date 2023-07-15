@@ -37,4 +37,17 @@ final class Vtiger implements VtigerInterface
             'relatedLabel' => $label,
         ], 'GET');
     }
+
+    public function fileRetrieve(string $attachmentId): string
+    {
+        /** @var array<array{filecontents: string}> $result */
+        $result = $this->client->invokeOperation('files_retrieve', [
+            'id' => $attachmentId,
+        ], 'GET');
+        if (empty($result)) {
+            return '';
+        }
+
+        return $result[0]['filecontents'];
+    }
 }

@@ -6,6 +6,9 @@ namespace App\Data;
 
 final class PropertyData extends \Spatie\LaravelData\Data
 {
+    /**
+     * @param  DocumentData[]|null  $documents
+     */
     public function __construct(
         public string $id,
         public string $externalid,
@@ -20,13 +23,14 @@ final class PropertyData extends \Spatie\LaravelData\Data
         public string $property_rights,
         public string $security,
         public string $price_original,
-        public string $price,
+        public float $price,
         public string $currency_id,
         public string $storeys_no,
         public string $year_builded,
         public string $country,
         public string $city,
         public string $address,
+        public ?array $documents,
     ) {
     }
 }
