@@ -6,10 +6,13 @@ namespace Tests\Feature;
 
 use App\Lib\MockVtiger;
 use App\Lib\VtigerInterface;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Inertia\Testing\AssertableInertia as Assert;
 
 class PotentialReceiverTest extends \Tests\TestCase
 {
+    use DatabaseMigrations;
+
     public function testReceivingUserModelFromVtiger(): void
     {
         $this->withoutExceptionHandling();

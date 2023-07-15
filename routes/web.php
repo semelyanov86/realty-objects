@@ -24,6 +24,7 @@ Route::get('/', function () {
     ]);
 });
 
+Route::post('/rating', [\App\Http\Controllers\RatingController::class, 'create'])->name('rating');
 Route::get('/{id}', \App\Http\Controllers\RealtyController::class)->name('realty');
 
 require __DIR__.'/auth.php';

@@ -21,5 +21,6 @@ export interface Property {
     country: string;
     city: string;
     address: string;
+    rating: number;
     documents: DocumentData[];
 }

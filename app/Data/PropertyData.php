@@ -31,6 +31,7 @@ final class PropertyData extends \Spatie\LaravelData\Data
         public string $city,
         public string $address,
         public ?array $documents,
+        public float $rating = 0,
     ) {
     }
 }

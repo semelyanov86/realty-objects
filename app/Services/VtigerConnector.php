@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Actions\GetRatingByProperty;
 use App\Data\DocumentData;
 use App\Data\ManagerData;
 use App\Data\PotentialData;
@@ -87,10 +88,12 @@ final class VtigerConnector
                 'country' => $originalProperty['country'],
                 'city' => $originalProperty['city'],
                 'address' => $originalProperty['address'],
+                'rating' => GetRatingByProperty::run($originalProperty['id']),
             ]);
             $property->documents = $this->getPropertyDocuments($property->id);
             $properties[] = $property;
         }
+        ray($properties);
 
         return $properties;
     }

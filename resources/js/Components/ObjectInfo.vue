@@ -19,121 +19,11 @@
             </template>
         </carousel>
         <div class="app-object-info">
-            <div class="app-object-info-mark">
-                <p>Rate this object:</p>
-                <div class="rate">
-                    <div class="rate-star __filled">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="44"
-                            height="44"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            style="width: 25px; height: 25px"
-                        >
-                            <path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            ></path>
-                            <path
-                                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div class="rate-star __filled">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="44"
-                            height="44"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            style="width: 25px; height: 25px"
-                        >
-                            <path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            ></path>
-                            <path
-                                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div class="rate-star __filled">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="44"
-                            height="44"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            style="width: 25px; height: 25px"
-                        >
-                            <path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            ></path>
-                            <path
-                                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div class="rate-star __filled">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="44"
-                            height="44"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            style="width: 25px; height: 25px"
-                        >
-                            <path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            ></path>
-                            <path
-                                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div class="rate-star __filled">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="44"
-                            height="44"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            style="width: 25px; height: 25px"
-                        >
-                            <path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            ></path>
-                            <path
-                                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-                            ></path>
-                        </svg>
-                    </div>
-                </div>
-            </div>
+            <Rating
+                :rating="object.rating"
+                :crmid="object.id"
+                :potential-id="id"
+            ></Rating>
         </div>
         <div class="app-object-detail">
             <p>
@@ -149,6 +39,7 @@ import { Property } from "../types/property";
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { DocumentData } from "@/types/document";
+import Rating from "@/Components/Rating.vue";
 
 export default defineComponent({
     name: "ObjectInfo",
@@ -157,8 +48,13 @@ export default defineComponent({
             type: Object as PropType<Property>,
             required: true,
         },
+        id: {
+            type: Number,
+            required: true,
+        },
     },
     components: {
+        Rating,
         Carousel,
         Slide,
         Pagination,

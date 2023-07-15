@@ -6,7 +6,7 @@
         </Head>
         <ManagerInfo :manager="manager" v-if="manager" />
         <div v-for="property in properties">
-            <ObjectInfo :object="property"></ObjectInfo>
+            <ObjectInfo :object="property" :id="id"></ObjectInfo>
         </div>
     </div>
 </template>
