@@ -6,7 +6,6 @@ namespace Tests\Feature;
 
 use App\Actions\GetRatingByProperty;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Inertia\Testing\AssertableInertia as Assert;
 
 class RatingTest extends \Tests\TestCase
 {
