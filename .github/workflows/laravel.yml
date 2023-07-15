@@ -23,7 +23,7 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Composer Lint
-        run: composer lint
+        run: ./vendor/bin/phplint --no-cache
 
       - name: Composer Audit
         run: composer audit
