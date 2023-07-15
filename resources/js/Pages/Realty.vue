@@ -34,7 +34,7 @@ export default defineComponent({
     },
     setup(props) {
         return {
-            id: props.id,
+            id: props.id ?? 0,
             manager: props.manager,
             potential: props.potential,
             properties: props.properties,

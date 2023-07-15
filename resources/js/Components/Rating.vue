@@ -35,7 +35,7 @@ export default defineComponent({
         const newRating = ref(props.rating);
         const displaySuccess = ref(false);
 
-        function handleUpdate(value) {
+        function handleUpdate(value: number) {
             router.post("/rating", {
                 value: value,
                 property_id: props.crmid,
