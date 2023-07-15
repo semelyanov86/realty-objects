@@ -24,6 +24,7 @@ jobs:
 
       - name: Setup Laravel
         run: |
+          cp .env.example .env
           php artisan config:clear
           php artisan cache:clear
           php artisan key:generate
