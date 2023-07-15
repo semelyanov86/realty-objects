@@ -93,7 +93,6 @@ final class VtigerConnector
             $property->documents = $this->getPropertyDocuments($property->id);
             $properties[] = $property;
         }
-        ray($properties);
 
         return $properties;
     }
