@@ -126,4 +126,4 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           port: 22
           script:
-            chown -R www-root /var/www/www-root/data/www/lists.vordoom.ru && cd /var/www/www-root/data/www/lists.vordoom.ru && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan migrate
+            chown -R www-root /var/www/www-root/data/www/lists.vordoom.ru && cd /var/www/www-root/data/www/lists.vordoom.ru && /opt/php81/bin/php artisan cache:clear && php artisan config:clear && /opt/php81/bin/php artisan view:clear && /opt/php81/bin/php artisan migrate
