@@ -107,14 +107,23 @@ jobs:
       - name: Clean Up
         run: rm -rf node_modules
 
-      - name: Deploy to Server
-        run: |
-          scp -r . ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/var/www/www-root/data/www/lists.vordoom.ru
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          key: ${{ secrets.DEPLOY_KEY }}
+          source: "./"
+          target: "/var/www/www-root/data/www/lists.vordoom.ru"
 
-      - name: Run Migrations
-        run: |
-          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} 'chown -R www-root /var/www/www-root/data/www/lists.vordoom.ru && cd /var/www/www-root/data/www/lists.vordoom.ru && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan migrate'
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+      - name: Run laravel commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: 22
+          script:
+            chown -R www-root /var/www/www-root/data/www/lists.vordoom.ru && cd /var/www/www-root/data/www/lists.vordoom.ru && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan migrate
