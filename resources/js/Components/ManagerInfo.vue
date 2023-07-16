@@ -2,7 +2,10 @@
     <div class="app-header project_2174">
         <div class="app-header-image">
             <img
-                src="/images/ff4233ad-46e9-42f9-a51c-c04d9bcd95a5.jpeg"
+                :src="
+                    manager?.image_details?.url ??
+                    '/images/ff4233ad-46e9-42f9-a51c-c04d9bcd95a5.jpeg'
+                "
                 alt="{{manager?.id}}"
             />
         </div>

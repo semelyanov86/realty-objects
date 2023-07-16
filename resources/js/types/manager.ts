@@ -6,4 +6,13 @@ export interface Manager {
     phone: string;
     title: string;
     imagename: string;
+    image_details: ImageDetails | null;
+}
+
+interface ImageDetails {
+    id: string;
+    orgname: string;
+    path: string;
+    name: string;
+    url: string;
 }

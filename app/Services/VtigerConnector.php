@@ -34,6 +34,7 @@ final class VtigerConnector
             'phone' => $result['phone_work'],
             'id' => $result['id'],
             'imagename' => $result['imagename'],
+            'image_details' => $result['image_details'] ?? null,
         ]);
     }
 
