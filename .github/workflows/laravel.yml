@@ -109,12 +109,12 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          scp -r . ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:~/path-to-your-project
+          scp -r . ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/var/www/www-root/data/www/lists.vordoom.ru
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
 
       - name: Run Migrations
         run: |
-          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} 'cd ~/path-to-your-project && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan migrate'
+          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} 'chown -R www-root /var/www/www-root/data/www/lists.vordoom.ru && cd /var/www/www-root/data/www/lists.vordoom.ru && php artisan cache:clear && php artisan config:clear && php artisan view:clear && php artisan migrate'
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
