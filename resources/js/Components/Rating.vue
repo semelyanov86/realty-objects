@@ -39,6 +39,7 @@ export default defineComponent({
             router.post("/rating", {
                 value: value,
                 property_id: props.crmid,
+                potential_id: props.potentialId,
             });
         }
         return {
