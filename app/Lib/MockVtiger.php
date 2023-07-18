@@ -103,4 +103,9 @@ final class MockVtiger implements VtigerInterface
     {
         return 'SOME_CONTENT_BASE64';
     }
+
+    public function getCrmId(string $id): int
+    {
+        return 5;
+    }
 }

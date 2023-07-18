@@ -20,7 +20,7 @@ final class VtigerConnector
 
     public function getAssignedUserModel(string $id): ?ManagerData
     {
-        $result = $this->client->findOneByID('Users', '5');
+        $result = $this->client->findOneByID('Users', $id);
 
         if ($result === null) {
             return null;

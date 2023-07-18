@@ -17,4 +17,6 @@ interface VtigerInterface
     public function retrieveRelated(string $parentId, string $type, string $label): array;
 
     public function fileRetrieve(string $attachmentId): string;
+
+    public function getCrmId(string $id): int;
 }

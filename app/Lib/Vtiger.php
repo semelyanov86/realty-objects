@@ -50,4 +50,9 @@ final class Vtiger implements VtigerInterface
 
         return $result[0]['filecontents'];
     }
+
+    public function getCrmId(string $id): int
+    {
+        return $this->client->entities->getNumericID($id);
+    }
 }
