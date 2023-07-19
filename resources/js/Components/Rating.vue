@@ -3,6 +3,7 @@
         <p>Rate this object:</p>
         <StarRating
             v-model="rating"
+            :step="1"
             @update:model-value="handleUpdate"
         ></StarRating>
         <p v-if="displaySuccess">Than you for rating!</p>
@@ -34,13 +35,19 @@ export default defineComponent({
     setup(props) {
         const newRating = ref(props.rating);
         const displaySuccess = ref(false);
-
         function handleUpdate(value: number) {
-            router.post("/rating", {
-                value: value,
-                property_id: props.crmid,
-                potential_id: props.potentialId,
-            });
+            newRating.value = value;
+            router.post(
+                "/rating",
+                {
+                    value: value,
+                    property_id: props.crmid,
+                    potential_id: props.potentialId,
+                },
+                {
+                    preserveState: false,
+                },
+            );
         }
         return {
             rating: newRating,

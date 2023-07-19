@@ -61,23 +61,16 @@ function adjustRating(this: HTMLDivElement, e: MouseEvent) {
     const relativeX = e.pageX - this.offsetLeft;
     const numberOfStars = props.numberOfStars;
     let rat = (relativeX / this.offsetWidth) * numberOfStars;
-    if (rat > 19) {
-        rat = rat - 19;
-    }
     rating.value = rat;
 }
 
-onMounted(() => {
-    if (starsContainer.value) {
-        starsContainer.value.addEventListener("click", adjustRating);
-    }
-});
+function handleClick(value: number) {
+    emit("update:modelValue", value);
+}
 
-onBeforeUnmount(() => {
-    if (starsContainer.value) {
-        starsContainer.value.removeEventListener("click", adjustRating);
-    }
-});
+onMounted(() => {});
+
+onBeforeUnmount(() => {});
 
 watch(roundedRating, (newValue) => {
     emit("update:modelValue", newValue);
@@ -95,6 +88,7 @@ watch(roundedRating, (newValue) => {
                 <div class="stars-outer" :style="{ color: inactiveColor }">
                     <StarIcon
                         v-for="i in numberOfStars"
+                        @click="handleClick(i)"
                         :key="i"
                         :style="{
                             ...generateEqualWidthAndHeight(starSize),
@@ -107,6 +101,7 @@ watch(roundedRating, (newValue) => {
                     :style="{ width: percent, color: starColor }"
                 >
                     <star-icon
+                        @click="handleClick(i)"
                         v-for="i in numberOfStars"
                         :key="i"
                         :style="{

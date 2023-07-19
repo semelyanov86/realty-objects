@@ -64,7 +64,6 @@ export default defineComponent({
         function getImgSrc(document: DocumentData) {
             return `data:${document.filetype};base64, ${document.file_content}`;
         }
-
         return {
             getImgSrc: getImgSrc,
             object: props.object,
