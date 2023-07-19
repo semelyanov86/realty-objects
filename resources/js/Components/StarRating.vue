@@ -60,7 +60,11 @@ const starsContainer = ref<HTMLDivElement>();
 function adjustRating(this: HTMLDivElement, e: MouseEvent) {
     const relativeX = e.pageX - this.offsetLeft;
     const numberOfStars = props.numberOfStars;
-    rating.value = (relativeX / this.offsetWidth) * numberOfStars - 19;
+    let rat = (relativeX / this.offsetWidth) * numberOfStars;
+    if (rat > 19) {
+        rat = rat - 19;
+    }
+    rating.value = rat;
 }
 
 onMounted(() => {

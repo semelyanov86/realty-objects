@@ -6,7 +6,7 @@
                     manager?.image_details?.url ??
                     '/images/ff4233ad-46e9-42f9-a51c-c04d9bcd95a5.jpeg'
                 "
-                alt="{{manager?.id}}"
+                :alt="manager?.id"
             />
         </div>
         <div class="app-header-info">
